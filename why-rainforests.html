@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="e7ec1e10aeb62665d4af77ea-text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgMOV19WChACU1NbDgIBXw==",licenseKey:"NRJS-2b6b373a7d7c974d892",applicationID:"27299369"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(24),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,i.indexOf("dev")!==-1&&(c.dev=!0),i.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&o.on("internal-error",function(t){r(t.stack)}),c.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(25),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(25),a=t(24);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(21),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||c),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(24),c=t(25),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(26);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],19:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],20:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(23),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],21:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],22:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],23:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],24:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],25:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],26:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,s,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),s=m(n),f=s.length,u=0;u<f;u++)s[u].apply(c,r);var l=d[y[n]];return l&&l.push([x,n,r,c]),c}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return l[t]=l[t]||i(n)}function v(t,e){u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:c,aborted:!1};return x}function o(t){return f(t,s,a)}function a(){return new r}function c(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var s="nr@context",f=t("gos"),u=t(24),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(y,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=t(18),c=t("handle"),s=t(24),f=t("ee"),u=t(22),d=t(19),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;if(d(l.location)){NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:a.getLastTimestamp(),now:a,origin:g,features:{},xhrWrappable:x,userAgent:u};t(15),t(20),p[h]?(p[h]("DOMContentLoaded",o,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",i),l[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,s,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,s],u],t)}c(n+"start",[o,a,s],u,f);try{return l=e.apply(a,o)}catch(h){throw c(n+"err",[o,a,h],u,f),h}finally{c(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,s,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)s=e[f],c=t[s],a(c)||(t[s]=n(c,u?s+r:r,i,s,o))}function c(n,r,o,a){if(!h||e){var c=h;h=!0;try{t.emit(n,r,o,e,a)}catch(s){i([s,n,r,o],t)}h=c}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function c(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function s(t,e,n){var r=t[e];t[e]=c(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(25),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=s,e.exports.argsToArray=f},{}]},{},["loader",2,12,4,3]);</script>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, minimal-ui" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="p:domain_verify" content="7a8be07236183e06ff4c1ea50361caa0" />
+<link rel="shortcut icon" href="https://www.coolearth.org/wp-content/themes/coolearth/assets/img/favicon.ico">
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<title>Why Rainforest? We depend on it for everything.</title>
+<meta name="description" content="A further 1.6 billion depend on the rainforests for their livelihoods. This means one in ten people in the world relies upon the rainforest." />
+<meta property="og:title" content="Why Rainforest? We depend on it for everything." />
+<meta property="og:description" content="A further 1.6 billion depend on the rainforests for their livelihoods. This means one in ten people in the world relies upon the rainforest." />
+<meta property="og:image:secure_url" content="https://www.coolearth.org/wp-content/uploads/2020/02/social_default-1600x900.jpg" /> <meta property="og:image" content="https://www.coolearth.org/wp-content/uploads/2020/02/social_default-1600x900.jpg" />
+<meta property="og:image:width" content="1708" />
+<meta property="og:image:height" content="1280" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.coolearth.org/#organization","name":"Cool Earth","url":"https://www.coolearth.org/","sameAs":["https://www.facebook.com/coolearth","https://instagram.com/coolearthaction/","https://www.linkedin.com/company/cool-earth","https://www.youtube.com/user/CoolEarthDotOrg","https://twitter.com/coolearth"],"logo":{"@type":"ImageObject","@id":"https://www.coolearth.org/#logo","inLanguage":"en-US","url":"https://www.coolearth.org/wp-content/uploads/2015/09/coolearth-logo.png","contentUrl":"https://www.coolearth.org/wp-content/uploads/2015/09/coolearth-logo.png","width":220,"height":80,"caption":"Cool Earth"},"image":{"@id":"https://www.coolearth.org/#logo"}},{"@type":"WebSite","@id":"https://www.coolearth.org/#website","url":"https://www.coolearth.org/","name":"Cool Earth","description":"","publisher":{"@id":"https://www.coolearth.org/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://www.coolearth.org/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.coolearth.org/what-we-do/why-rainforests/#primaryimage","inLanguage":"en-US","url":"https://www.coolearth.org/wp-content/uploads/2020/02/social_default.jpg","contentUrl":"https://www.coolearth.org/wp-content/uploads/2020/02/social_default.jpg","width":1708,"height":1280,"caption":"Misty aerial photo of Rainforest"},{"@type":"WebPage","@id":"https://www.coolearth.org/what-we-do/why-rainforests/#webpage","url":"https://www.coolearth.org/what-we-do/why-rainforests/","name":"Why Rainforest? We depend on it for everything.","isPartOf":{"@id":"https://www.coolearth.org/#website"},"primaryImageOfPage":{"@id":"https://www.coolearth.org/what-we-do/why-rainforests/#primaryimage"},"datePublished":"2015-07-24T13:37:09+00:00","dateModified":"2020-07-08T15:13:09+00:00","description":"A further 1.6 billion depend on the rainforests for their livelihoods. This means one in ten people in the world relies upon the rainforest.","breadcrumb":{"@id":"https://www.coolearth.org/what-we-do/why-rainforests/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.coolearth.org/what-we-do/why-rainforests/"]}]},{"@type":"BreadcrumbList","@id":"https://www.coolearth.org/what-we-do/why-rainforests/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://www.coolearth.org/","url":"https://www.coolearth.org/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://www.coolearth.org/what-we-do/","url":"https://www.coolearth.org/what-we-do/","name":"What We Do"}},{"@type":"ListItem","position":3,"item":{"@type":"WebPage","@id":"https://www.coolearth.org/what-we-do/why-rainforests/","url":"https://www.coolearth.org/what-we-do/why-rainforests/","name":"Why Rainforest?"}}]}]}</script>
+
+<meta property="og:image:width" content="1600" /><meta property="og:image:height" content="900" /><link rel='dns-prefetch' href='//js.stripe.com' />
+<link rel='dns-prefetch' href='//api.mapbox.com' />
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Cool Earth &raquo; Why Rainforest? Comments Feed" href="https://www.coolearth.org/what-we-do/why-rainforests/feed/" />
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.coolearth.org/wp-includes/css/dist/block-library/style.min.css?ver=4a744401ca5d54799415d2de454aa594' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-components-css' href='https://www.coolearth.org/wp-includes/css/dist/components/style.min.css?ver=4a744401ca5d54799415d2de454aa594' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-editor-css' href='https://www.coolearth.org/wp-includes/css/dist/block-editor/style.min.css?ver=4a744401ca5d54799415d2de454aa594' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-nux-css' href='https://www.coolearth.org/wp-includes/css/dist/nux/style.min.css?ver=4a744401ca5d54799415d2de454aa594' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-editor-css' href='https://www.coolearth.org/wp-includes/css/dist/editor/style.min.css?ver=4a744401ca5d54799415d2de454aa594' type='text/css' media='all' />
+<link rel='stylesheet' id='wpsvg_inline-cgb-style-css-css' href='https://www.coolearth.org/wp-content/plugins/wpsvg/gutenberg/dist/blocks.style.build.css' type='text/css' media='all' />
+<link rel='stylesheet' id='sss4givewp-css' href='https://www.coolearth.org/wp-content/plugins/simple-social-shout-for-givewp/assets/sss4givewp-frontend.css?ver=1.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='cookie-consent-style-css' href='https://www.coolearth.org/wp-content/plugins/uk-cookie-consent/assets/css/style.css?ver=4a744401ca5d54799415d2de454aa594' type='text/css' media='all' />
+<link rel='stylesheet' id='give-styles-css' href='https://www.coolearth.org/wp-content/plugins/give/assets/dist/css/give.css?ver=2.10.1' type='text/css' media='all' />
+<link rel='stylesheet' id='give-fee-recovery-css' href='https://www.coolearth.org/wp-content/plugins/give-fee-recovery/assets/css/give-fee-recovery-frontend.min.css?ver=1.9.0' type='text/css' media='all' />
+<link rel='stylesheet' id='give_ffm_frontend_styles-css' href='https://www.coolearth.org/wp-content/plugins/give-form-field-manager/assets/css/give-ffm-frontend.min.css?ver=1.6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='give_ffm_datepicker_styles-css' href='https://www.coolearth.org/wp-content/plugins/give-form-field-manager/assets/css/give-ffm-datepicker.min.css?ver=1.6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='give-gift-aid-css' href='https://www.coolearth.org/wp-content/plugins/give-gift-aid/assets/css/give-gift-aid-frontend.min.css?ver=1.2.6' type='text/css' media='all' />
+<link rel='stylesheet' id='give-tributes-css' href='https://www.coolearth.org/wp-content/plugins/give-tributes/assets/css/give-tributes-public.min.css?ver=1.5.8' type='text/css' media='all' />
+<link rel='stylesheet' id='give-currency-switcher-style-css' href='https://www.coolearth.org/wp-content/plugins/give-currency-switcher/assets/css/give-currency-switcher-frontend.min.css?ver=1.3.13' type='text/css' media='all' />
+<link rel='stylesheet' id='give_recurring_css-css' href='https://www.coolearth.org/wp-content/plugins/give-recurring/assets/css/give-recurring.css?ver=1.12.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4a744401ca5d54799415d2de454aa594' type='text/css' media='all' />
+<link rel='stylesheet' id='mapbox.min-css' href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css?ver=4a744401ca5d54799415d2de454aa594' type='text/css' media='all' />
+<link rel='stylesheet' id='app.min-css' href='https://www.coolearth.org/wp-content/themes/coolearth/assets/css/app.min.css?ver=1.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='givewp-ce-css' href='https://www.coolearth.org/wp-content/themes/coolearth/assets/css/givewp.css?ver=4a744401ca5d54799415d2de454aa594' type='text/css' media='all' />
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-includes/js/jquery/ui/core.min.js?ver=1.12.1' id='jquery-ui-core-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.12.1' id='jquery-ui-datepicker-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" id='jquery-ui-datepicker-js-after'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-includes/js/jquery/ui/mouse.min.js?ver=1.12.1' id='jquery-ui-mouse-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-includes/js/jquery/ui/slider.min.js?ver=1.12.1' id='jquery-ui-slider-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-includes/js/plupload/moxie.min.js?ver=1.3.5' id='moxiejs-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-includes/js/plupload/plupload.min.js?ver=2.1.9' id='plupload-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" id='plupload-handlers-js-extra'>
+/* <![CDATA[ */
+var pluploadL10n = {"queue_limit_exceeded":"You have attempted to queue too many files.","file_exceeds_size_limit":"%s exceeds the maximum upload size for this site.","zero_byte_file":"This file is empty. Please try another.","invalid_filetype":"Sorry, this file type is not permitted for security reasons.","not_an_image":"This file is not an image. Please try another.","image_memory_exceeded":"Memory exceeded. Please try another smaller file.","image_dimensions_exceeded":"This is larger than the maximum size. Please try another.","default_error":"An error occurred in the upload. Please try again later.","missing_upload_url":"There was a configuration error. Please contact the server administrator.","upload_limit_exceeded":"You may only upload 1 file.","http_error":"Unexpected response from the server. The file may have been uploaded successfully. Check in the Media Library or reload the page.","http_error_image":"Post-processing of the image failed likely because the server is busy or does not have enough resources. Uploading a smaller image may help. Suggested maximum size is 2500 pixels.","upload_failed":"Upload failed.","big_upload_failed":"Please try uploading this file with the %1$sbrowser uploader%2$s.","big_upload_queued":"%s exceeds the maximum upload size for the multi-file uploader when used in your browser.","io_error":"IO error.","security_error":"Security error.","file_cancelled":"File canceled.","upload_stopped":"Upload stopped.","dismiss":"Dismiss","crunching":"Crunching\u2026","deleted":"moved to the Trash.","error_uploading":"\u201c%s\u201d has failed to upload.","unsupported_image":"This image cannot be displayed in a web browser. For best results convert it to JPEG before uploading."};
+/* ]]> */
+</script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-includes/js/plupload/handlers.min.js?ver=4a744401ca5d54799415d2de454aa594' id='plupload-handlers-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" id='give_ffm_frontend-js-extra'>
+/* <![CDATA[ */
+var give_ffm_frontend = {"ajaxurl":"https:\/\/www.coolearth.org\/wp-admin\/admin-ajax.php","error_message":"Please complete all required fields","submit_button_text":"Donate Now","nonce":"889d964f23","confirmMsg":"Are you sure?","i18n":{"timepicker":{"choose_time":"Choose Time","time":"Time","hour":"Hour","minute":"Minute","second":"Second","done":"Done","now":"Now"},"repeater":{"max_rows":"You have added the maximum number of fields allowed."}},"plupload":{"url":"https:\/\/www.coolearth.org\/wp-admin\/admin-ajax.php?nonce=1dcf2114d4","flash_swf_url":"https:\/\/www.coolearth.org\/wp-includes\/js\/plupload\/plupload.flash.swf","filters":[{"title":"Allowed Files","extensions":"*"}],"multipart":true,"urlstream_upload":true}};
+/* ]]> */
+</script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/plugins/give-form-field-manager/assets/js/frontend/give-ffm-frontend.min.js?ver=1.6.0' id='give_ffm_frontend-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" id='give-tributes-common-js-extra'>
+/* <![CDATA[ */
+var give_tributes_common_vars = {"give_tribute_characters_left":"Characters left","ajax_url":"https:\/\/www.coolearth.org\/wp-admin\/admin-ajax.php","give_tribute_receipt_limit_exceed":"Sorry! You cannot add notify people more than 5."};
+/* ]]> */
+</script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/plugins/give-tributes/assets/js/give-tributes-common.min.js?ver=1.5.8' id='give-tributes-common-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" id='give-stripe-js-js-extra'>
+/* <![CDATA[ */
+var give_stripe_vars = {"zero_based_currency":"","zero_based_currencies_list":["JPY","KRW","CLP","ISK","BIF","DJF","GNF","KHR","KPW","LAK","LKR","MGA","MZN","VUV"],"sitename":"Cool Earth","checkoutBtnTitle":"Donate","publishable_key":"pk_live_SMtnnvlq4TpJelMdklNha8iD","checkout_image":"","checkout_address":"on","checkout_processing_text":"Donation Processing...","give_version":"2.10.1","cc_fields_format":"multi","card_number_placeholder_text":"Card Number","card_cvc_placeholder_text":"CVC","donate_button_text":"Donate Now","element_font_styles":{"cssSrc":false},"element_base_styles":{"color":"#32325D","fontWeight":500,"fontSize":"16px","fontSmoothing":"antialiased","::placeholder":{"color":"#222222"},":-webkit-autofill":{"color":"#e39f48"}},"element_complete_styles":{},"element_empty_styles":{},"element_invalid_styles":{},"float_labels":"","base_country":"GB","preferred_locale":"en","stripe_card_update":"","stripe_becs_update":""};
+/* ]]> */
+</script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://js.stripe.com/v3/?ver=2.10.1' id='give-stripe-js-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/plugins/give/assets/dist/js/give-stripe.js?ver=2.10.1' id='give-stripe-onpage-js-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/plugins/give/assets/dist/js/babel-polyfill.js?ver=2.10.1' id='babel-polyfill-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" id='give-js-extra'>
+/* <![CDATA[ */
+var give_global_vars = {"ajaxurl":"https:\/\/www.coolearth.org\/wp-admin\/admin-ajax.php","checkout_nonce":"15d6a03574","currency":"GBP","currency_sign":"\u00a3","currency_pos":"before","thousands_separator":",","decimal_separator":".","no_gateway":"Please select a payment method.","bad_minimum":"The minimum custom donation amount for this form is","bad_maximum":"The maximum custom donation amount for this form is","general_loading":"Loading...","purchase_loading":"Please Wait...","textForOverlayScreen":"<h3>Processing...<\/h3><p>This will only take a second!<\/p>","number_decimals":"2","is_test_mode":"","give_version":"2.10.1","magnific_options":{"main_class":"give-modal","close_on_bg_click":false},"form_translation":{"payment-mode":"Please select payment mode.","give_first":"Please enter your first name.","give_email":"Please enter a valid email address.","give_user_login":"Invalid email address or username.","give_user_pass":"Enter a password.","give_user_pass_confirm":"Enter the password confirmation.","give_agree_to_terms":"You must agree to the terms and conditions."},"confirm_email_sent_message":"Please check your email and click on the link to access your complete donation history.","ajax_vars":{"ajaxurl":"https:\/\/www.coolearth.org\/wp-admin\/admin-ajax.php","ajaxNonce":"2eba47ebb7","loading":"Loading","select_option":"Please select an option","default_gateway":"stripe_checkout","permalinks":"1","number_decimals":2},"cookie_hash":"41186121dedf89822a372b795c0222f4","session_nonce_cookie_name":"wp-give_session_reset_nonce_41186121dedf89822a372b795c0222f4","session_cookie_name":"wp-give_session_41186121dedf89822a372b795c0222f4","delete_session_nonce_cookie":"0"};
+var giveApiSettings = {"root":"https:\/\/www.coolearth.org\/wp-json\/give-api\/v2\/","rest_base":"give-api\/v2"};
+/* ]]> */
+</script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/plugins/give/assets/dist/js/give.js?ver=2.10.1' id='give-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" id='give-fee-recovery-common-js-extra'>
+/* <![CDATA[ */
+var give_fee_recovery_object = {"give_fee_zero_based_currency":"[\"JPY\",\"KRW\",\"CLP\",\"ISK\",\"BIF\",\"DJF\",\"GNF\",\"KHR\",\"KPW\",\"LAK\",\"LKR\",\"MGA\",\"MZN\",\"VUV\"]"};
+/* ]]> */
+</script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/plugins/give-fee-recovery/assets/js/give-fee-recovery-common.min.js?ver=1.9.0' id='give-fee-recovery-common-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/plugins/give-fee-recovery/assets/js/give-fee-recovery-public.min.js?ver=1.9.0' id='give-fee-recovery-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" id='give-gift-aid-js-extra'>
+/* <![CDATA[ */
+var give_gift_aid_vars = {"gift_aid_site_url":"https:\/\/www.coolearth.org","gift_aid_base_country":"GB"};
+/* ]]> */
+</script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/plugins/give-gift-aid/assets/js/give-gift-aid-frontend.min.js?ver=1.2.6' id='give-gift-aid-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/plugins/give-stripe/assets/dist/js/give-stripe-payment-request.js?ver=2.2.14' id='give-stripe-payment-request-js-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/plugins/give-tributes/assets/js/give-tributes-public.min.js?ver=1.5.8' id='give-tributes-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" id='give_recurring_script-js-extra'>
+/* <![CDATA[ */
+var Give_Recurring_Vars = {"email_access":"1","pretty_intervals":{"1":"Every","2":"Every two","3":"Every three","4":"Every four","5":"Every five","6":"Every six"},"pretty_periods":{"day":"Daily","week":"Weekly","month":"Monthly","quarter":"Quarterly","half-year":"Semi-Annually","year":"Yearly"},"messages":{"daily_forbidden":"The selected payment method does not support daily recurring giving. Please select another payment method or supported giving frequency.","confirm_cancel":"Are you sure you want to cancel this subscription?"},"multi_level_message_pre_text":"You have chosen to donate"};
+/* ]]> */
+</script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/plugins/give-recurring/assets/js/give-recurring.js?ver=1.12.1' id='give_recurring_script-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js?ver=4a744401ca5d54799415d2de454aa594' id='mapbox-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/themes/coolearth/assets/js/app.head.min.js?ver=1.1.1' id='app.head-js'></script>
+<style id="ctcc-css" type="text/css" media="screen">
+				#catapult-cookie-bar {
+					box-sizing: border-box;
+					max-height: 0;
+					opacity: 0;
+					z-index: 99999;
+					overflow: hidden;
+					color: #ffffff;
+					position: fixed;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					background-color: #464646;
+				}
+				#catapult-cookie-bar a {
+					color: #fff;
+				}
+				#catapult-cookie-bar .x_close span {
+					background-color: #ffffff;
+				}
+				button#catapultCookie {
+					background:#f4c434;
+					color: #ffffff;
+					border: 0; padding: 6px 9px; border-radius: 3px;
+				}
+				#catapult-cookie-bar h3 {
+					color: #ffffff;
+				}
+				.has-cookie-bar #catapult-cookie-bar {
+					opacity: 1;
+					max-height: 999px;
+					min-height: 30px;
+				}</style><meta name="generator" content="Give v2.10.1" />
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript">
+		(function(h,o,t,j,a,r){
+			h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+			h._hjSettings={hjid:1711517,hjsv:5};
+			a=o.getElementsByTagName('head')[0];
+			r=o.createElement('script');r.async=1;
+			r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+			a.appendChild(r);
+		})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+<style>
+		#woocommerce_currency_converter-2 {
+			visibility: hidden;
+		}
+	</style>
+
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PL6SZM4');</script>
+
+</head>
+<body class="page-template-default page page-id-470 page-child parent-pageid-146 give-recurring pollada-style">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PL6SZM4"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="pushit-wrap">
+<header class="header">
+<div class="topbar">
+<div class="row row--full fixed-width-header">
+<div class="column one-half m-one-whole">
+<ul class="nav menu--account">
+</ul>
+</div>
+<div class="column one-half m-hide">
+<ul class="nav socialmenu socialmenu--header">
+<li class="highlight"><a href="https://saveearth55.000webhostapp.com/sign-up-emails.html">Sign up for emails<i class="fa fa-envelope"></i></a></li>
+<li><a href="https://twitter.com/?lang=en" target="_blank"><span class="fa fa-twitter"></span></a></li>
+<li><a href="https://www.facebook.com/" target="_blank"><span class="fa fa-facebook"></span></a></li>
+<li><a href="https://www.youtube.com/" target="_blank"><span class="fa fa-youtube"></span></a></li>
+<li><a href="https://www.instagram.com/" target="_blank"><span class="fa fa-instagram"></span></a></li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="navbar">
+<div class="row row--full cf fixed-width-header">
+<div class="column one-fourth l-one-third l-flow-reverse">
+<a href="https://saveearth55.000webhostapp.com/" class=" l-flow-reverse logo"><img src="https://saveearth55.000webhostapp.com/images/save_planet.png" class="logo" width="135" alt="Save Earth"></a>
+</div>
+<div class="column three-fourths l-two-thirds l-no-padding-left">
+<div class="nav menu--main l-hide">
+<div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-473"><a href="/what-we-do/">What We Do</a>
+<ul class="sub-menu">
+<li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476"><a href="https://saveearth55.000webhostapp.com/what-we-do/our-mission.html">Our Mission</a></li>
+<li id="menu-item-30736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30736"><a href="https://saveearth55.000webhostapp.com/what-we-do/climate-change.html">Climate Change</a></li>
+</ul>
+</li>
+<li id="menu-item-583" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-583"><a href="/get-involved/">Get Involved</a>
+<ul class="sub-menu">
+<li id="menu-item-584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584"><a href="https://saveearth55.000webhostapp.com/get-involved/become-an-adventurist.html">Adventurists</a></li>
+<li id="menu-item-22579" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22579"><a href="https://saveearth55.000webhostapp.com/get-involved/community-partnerships.html">Become a Rainforest Partner</a></li>
+</ul>
+</li>
+<li id="menu-item-10909" class="donatelink menu-item menu-item-type-post_type menu-item-object-page menu-item-10909">
+    <form>
+        <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_GypTNPAPNGaOOp" async> </script> 
+    </form></li>
+</div> </div>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript">
+							// call js function loading() to toggle the overlay display
+							// outside of jQuery(document).ready(); so can be called globally
+							var loading = function() {
+								jQuery('.loading-overlay').toggleClass( 'is-loading' );
+							};
+							jQuery(document).ready(function() {
+								// apply class .overlay-toggle, when element is clicked, will toggle the overlay
+								jQuery('.overlay-toggle').click(function(){
+									loading();
+								});
+								// I assume this was for testing
+								// When overlay is clicked toggle display (hide it)
+								// jQuery('.loading-overlay').click(function(){
+								//	 loading();
+								// });
+							});
+						</script>
+</div>
+</div>
+</nav>
+</header>
+<div class="loading-overlay">
+<p><i class="fa fa-circle-o-notch fa-spin"></i></p>
+</div>
+
+
+
+<section class="section slide section--large section--img image-position img_text_over  anchor_bottom" style="overflow: hidden;">
+<img width="1920" height="1439" src="https://www.coolearth.org/wp-content/uploads/2018/09/171103_PNG_Gadaisu_Drone-216.jpg" class="bg-image" alt="Cool Earth | Aerial drone footage of rainforest in Papua New Guinea" loading="lazy" srcset="https://www.coolearth.org/wp-content/uploads/2018/09/171103_PNG_Gadaisu_Drone-216.jpg 1920w, https://www.coolearth.org/wp-content/uploads/2018/09/171103_PNG_Gadaisu_Drone-216-500x375.jpg 500w, https://www.coolearth.org/wp-content/uploads/2018/09/171103_PNG_Gadaisu_Drone-216-1200x899.jpg 1200w, https://www.coolearth.org/wp-content/uploads/2018/09/171103_PNG_Gadaisu_Drone-216-1600x1199.jpg 1600w" sizes="(max-width: 1920px) 100vw, 1920px" />
+<div class="bg-fallback  anchor_bottom" style="background-image: url('https://www.coolearth.org/wp-content/uploads/2018/09/171103_PNG_Gadaisu_Drone-216-1200x899.jpg');"></div>
+<div class="midway">
+<div class="midway-inner">
+<div class="row">
+<div class="column center">
+<span class="alpha outline">Why Rainforest?</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="section section--white  no-padding-bottom ">
+<div class="row">
+<div class="column two-thirds push-sixth l-one-whole  no-padding ">
+<h2 class="title center">We depend upon the rainforest for everything</h2>
+<div class="content">
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="section section--white no-padding-bottom content_blocks">
+<div class="row cf ">
+</div>
+<div class="row cf ">
+<div class="column one-third l-one-third  m-one-whole">
+
+<div class="item">
+<span class="item-media">
+<span class="imagewrap green-light ">
+<img src="https://www.coolearth.org/wp-content/uploads/2015/07/why_rainforest_stat_blocks_480.png" alt="Why Rainforest?" />
+</span>
+<span class="item-overlay green-light ">
+<span class="midway">
+<span class="midway-inner">
+<span class="copy "> Deforestation is a major cause of climate change – putting more CO2 into the atmosphere than all of the world’s transport combined.</span>
+<span class="rule"></span>
+</span>
+</span>
+</span>
+</span>
+<span class="item-content center">
+<span class="item-title title">
+</span>
+<span class="strap"></span>
+</span>
+</div>
+</div>
+<div class="column one-third l-one-third  m-one-whole">
+
+<div class="item">
+<span class="item-media">
+<span class="imagewrap green-light ">
+<img src="https://www.coolearth.org/wp-content/uploads/2015/08/water.png" alt="Why Rainforest?" />
+</span>
+<span class="item-overlay green-light ">
+<span class="midway">
+<span class="midway-inner">
+<span class="copy "> Moisture from the rainforest travels around the world, with the forests of the Congo affecting rainfall in America’s Midwest. Each acre of rainforest releases 76,000 litres of water a year.</span>
+<span class="rule"></span>
+</span>
+</span>
+</span>
+</span>
+<span class="item-content center">
+<span class="item-title title">
+</span>
+<span class="strap"></span>
+</span>
+</div>
+</div>
+<div class="column one-third l-one-third  m-one-whole">
+
+<div class="item">
+<span class="item-media">
+<span class="imagewrap grey ">
+<img src="https://www.coolearth.org/wp-content/uploads/2015/08/species.png" alt="Why Rainforest?" />
+</span>
+<span class="item-overlay grey ">
+<span class="midway">
+<span class="midway-inner">
+<span class="copy "> Despite only covering 6% of the world’s land surface, rainforests contain 2/3 of all biodiversity. 99% of this is still to be studied.</span>
+<span class="rule"></span>
+</span>
+</span>
+</span>
+</span>
+<span class="item-content center">
+<span class="item-title title">
+</span>
+<span class="strap"></span>
+</span>
+</div>
+</div>
+</div>
+</section>
+    
+
+
+<section class="section section--grey ">
+<div class="row">
+<div class="column two-thirds push-sixth l-one-whole ">
+<div class="standfirst title">
+<p>Rainforest is Earth’s most essential ecosystem, and we all depend on it for our survival.</p>
+</div>
+<div class="content">
+<p>In the Amazon rainforest alone, a single square mile of rainforest often houses more than 50,000 insect species.</p>
+<p>Tropical forests have the highest carbon density of all forest types due to their ability for vast carbon sequestration. Therefore, protecting rainforest is one of the most effective actions we can take to tackle climate breakdown.</p>
+<p>Deforestation releases as much carbon into the atmosphere as the global transport sector and destroys the best carbon capture and storage technology we have.</p>
+<p>The reality of climate change is no longer up for debate. It is real and it is happening now. Our changing climate is the most pressing challenge facing our world today. Forest loss plays a major part in this, contributing to more than 12% of all CO2 emissions. Keeping rainforest standing is the simplest and cheapest way to mitigate climate change.</p>
+</div>
+</div>
+</div>
+</section>
+    
+
+
+<section class="section slide section--large section--img image-position img_text_over  anchor_default" style="overflow: hidden;">
+<img width="2562" height="1920" src="https://www.coolearth.org/wp-content/uploads/2018/09/170509_Peru_Ashaninka_Aerial-0055.jpg" class="bg-image" alt="Why Rainforest?" loading="lazy" srcset="https://www.coolearth.org/wp-content/uploads/2018/09/170509_Peru_Ashaninka_Aerial-0055.jpg 2562w, https://www.coolearth.org/wp-content/uploads/2018/09/170509_Peru_Ashaninka_Aerial-0055-500x375.jpg 500w, https://www.coolearth.org/wp-content/uploads/2018/09/170509_Peru_Ashaninka_Aerial-0055-1200x899.jpg 1200w, https://www.coolearth.org/wp-content/uploads/2018/09/170509_Peru_Ashaninka_Aerial-0055-1600x1199.jpg 1600w" sizes="(max-width: 2562px) 100vw, 2562px" />
+<div class="bg-fallback  anchor_default" style="background-image: url('https://www.coolearth.org/wp-content/uploads/2018/09/170509_Peru_Ashaninka_Aerial-0055-1200x899.jpg');"></div>
+<div class="midway">
+<div class="midway-inner">
+<div class="row">
+<div class="column center">
+<span class="alpha btn btn--white no-border cursor"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="section section--  no-padding-bottom ">
+<br><br>
+</section>
+
+
+<section class="section">
+<div class="row">
+<div class="column one-half  l-one-half m-one-whole">
+<canvas id="myChart"></canvas>
+</div>
+<div class="column one-half l-one-half m-one-whole">
+<div class="standfirst title">
+<p>
+Of the world’s remaining forests,
+<br />46% are fragmented,
+<br />30% are degraded,
+<br /><span class="highlight">and only 24% are intact</span>
+</p>
+</div>
+<p>This loss is not just a crisis for the planet but a tragedy for local people who depend upon the forest for everything.</p>
+</div>
+</div>
+</section>
+    
+
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript">
+	var pieData = {
+		type: "doughnut",
+		data: {
+			labels:[
+				"46% are fragmented",
+				"30% are degraded",
+				"24% are intact"
+			],
+			datasets: [{
+				data: [46, 30, 24],
+				backgroundColor: [
+					"#65B9DB",
+					"#B1D299",
+					"#F4C434"
+				]
+			}]
+		},
+		options: {
+			legend: {
+				display: false
+			},
+			title: {
+				display: false
+			},
+			animation: {
+				animateScale: true,
+				animateRotate: true
+			}
+		}
+	};
+
+	jQuery(document).ready(function() {
+
+		// Get the context of the canvas element we want to select
+		var ctx = document.getElementById("myChart").getContext("2d"),
+			pie = false;
+
+		jQuery(window).on('scroll', function() {
+
+			var t = jQuery(document).scrollTop(),
+				b = jQuery(document).scrollTop() + jQuery(window).height();
+
+			if (b + 100 >= jQuery('#myChart').offset().top) {
+				if (! pie) {
+					pie = new Chart(ctx, pieData);
+				}
+			}
+		});
+	});
+</script>
+
+
+<section class="section section--grey  no-padding-bottom ">
+<div class="row">
+<div class="column two-thirds push-sixth l-one-whole  no-padding ">
+<div class="content">
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">Tropical forests around the world were destroyed at an increasing rate in 2020 compared with the year before, despite the global economic downturn caused by the pandemic, which reduced demand for some commodities that have spurred deforestation in the past.</span></p>
+<p><span style="font-weight: 400;">Protecting rainforest is one of the most effective actions we can take to tackle climate breakdown. But keeping pristine, primary rainforest standing strong is also essential for many further reasons:</span></p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="section layout--icon_list">
+<div class="row">
+<div class="column two-thirds push-sixth l-one-whole">
+<div class="icon-list-wrap">
+<div class="icon-list-icon">
+<img class="icon-list-image" src="https://www.coolearth.org/wp-content/uploads/2015/07/water_ICON_LEARN_ICON.png" alt="Fresh Water" />
+</div>
+<div class="icon-list-content">
+<h4 class="icon-list-title">Fresh Water</h4>
+<div class="icon-list-copy">
+<p>Rainforests are part of a global irrigation system – the ‘biopump’ that helps form clouds and distribute fresh water around the planet. As rainforests shrink, droughts increase, already affecting crop growth worldwide.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="column two-thirds push-sixth l-one-whole">
+<div class="icon-list-wrap">
+<div class="icon-list-icon">
+<img class="icon-list-image" src="https://www.coolearth.org/wp-content/uploads/2015/07/SUPPORT_ICON_SUPPORT_ICON.png" alt="Supporting People" />
+</div>
+<div class="icon-list-content">
+<h4 class="icon-list-title">Supporting People</h4>
+<div class="icon-list-copy">
+<p>Rainforests are home to 350 million people around the tropics. They are essential for shelter, health and food as well as being an intrinsic part of their cultures and traditions.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="column two-thirds push-sixth l-one-whole">
+<div class="icon-list-wrap">
+<div class="icon-list-icon">
+<img class="icon-list-image" src="https://www.coolearth.org/wp-content/uploads/2015/07/biodiversity_ICON.png" alt="Rich Biodiversity" />
+</div>
+<div class="icon-list-content">
+<h4 class="icon-list-title">Rich Biodiversity</h4>
+<div class="icon-list-copy">
+<p>Megadiverse ecosystems, rainforests are home to millions of species. And protecting these are vital. We are losing around 135 plants, animal and insect species every day. That’s 50,000 species a year, due to deforestation.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="column two-thirds push-sixth l-one-whole">
+<div class="icon-list-wrap">
+<div class="icon-list-icon">
+<img class="icon-list-image" src="https://www.coolearth.org/wp-content/uploads/2015/07/carbon_INVEST_ICON.png" alt="Carbon Sequestration" />
+</div>
+<div class="icon-list-content">
+<h4 class="icon-list-title">Carbon Sequestration</h4>
+<div class="icon-list-copy">
+<p>All plants absorb carbon dioxide, storing it in their leaves, stems and roots. The planet’s rainforests are capable of providing 23% of the cost-effective climate mitigation needed before 2030 [1].</p>
+</div>
+</div>
+</div>
+</div>
+<div class="column two-thirds push-sixth l-one-whole">
+<div class="icon-list-wrap">
+<div class="icon-list-icon">
+<img class="icon-list-image" src="https://www.coolearth.org/wp-content/uploads/2017/10/MONITOR_ICON.png" alt="Fertile soils" />
+</div>
+<div class="icon-list-content">
+<h4 class="icon-list-title">Fertile soils</h4>
+<div class="icon-list-copy">
+<p>A single spoonful of soil in the rainforest contains 10,000 to 50,000 different types of bacteria and supports millions of species of fungi, plant and animal. If deforestation happens, the nutrients and bacteria are lost, for good.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="section section--grey  no-padding-bottom ">
+<div class="row">
+<div class="column two-thirds push-sixth l-one-whole  no-padding ">
+<div class="content">
+</div>
+</div>
+</div>
+</section>
+
+
+<div class="subfooter">
+<div class="row">
+<div class="column one-whole center">
+<span class="copyright">&copy; Save Earth 2021 | Site by Mandar Sawant </span>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="pushit-overlay"></div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="e7ec1e10aeb62665d4af77ea-text/javascript">
+			/* <![CDATA[ */
+			var give_cs_json_obj = 'null';
+			/* ]]> */
+		</script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" id='cookie-consent-js-extra'>
+/* <![CDATA[ */
+var ctcc_vars = {"expiry":"30","method":"1","version":"1"};
+/* ]]> */
+</script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/plugins/uk-cookie-consent/assets/js/uk-cookie-consent-js.js?ver=2.3.0' id='cookie-consent-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" id='give-currency-switcher-js-extra'>
+/* <![CDATA[ */
+var give_currency_switcher = {"nonce":"94c44af278","notice_dismiss_image":"https:\/\/www.coolearth.org\/wp-content\/plugins\/give\/assets\/dist\/images\/close.svg","currency_not_support_message":"<b>{currency_code}<\/b> is not supported by <b>{payment_gateway}<\/b> gateway.","cs_custom_price_message":"","setting_vars":{"base_currency":"GBP"}};
+/* ]]> */
+</script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/plugins/give-currency-switcher/assets/js/give-currency-switcher-frontend.min.js?ver=1.3.13' id='give-currency-switcher-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-content/themes/coolearth/assets/js/app.min.js?ver=1.1.1' id='app-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript" src='https://www.coolearth.org/wp-includes/js/wp-embed.min.js?ver=4a744401ca5d54799415d2de454aa594' id='wp-embed-js'></script>
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript">
+					jQuery(document).ready(function($){
+												if(!catapultReadCookie("catAccCookies")){ // If the cookie has not been set then show the bar
+							$("html").addClass("has-cookie-bar");
+							$("html").addClass("cookie-bar-bottom-bar");
+							$("html").addClass("cookie-bar-bar");
+													}
+																	});
+				</script>
+<div id="catapult-cookie-bar" class=""><div class="ctcc-inner "><span class="ctcc-left-side">We use cookies to improve your experience on our website - <a class="ctcc-more-info-link" tabindex=0 target="_blank" href="https://www.coolearth.org/policies-and-procedures/cookie-policy/">View our cookie policy</a></span><span class="ctcc-right-side"><button id="catapultCookie" tabindex=0 onclick="if (!window.__cfRLUnblockHandlers) return false; catapultAcceptCookies();" data-cf-modified-e7ec1e10aeb62665d4af77ea-="">Okay, thanks</button></span></div></div> <script type="e7ec1e10aeb62665d4af77ea-text/javascript">
+
+		// GA Enhance Ecommerce tracking.
+		(function ($) {
+
+			window.addEventListener('load', function give_ga_purchase(event) {
+
+				window.removeEventListener('load', give_ga_purchase, false);
+
+				var ga = window[window['GoogleAnalyticsObject'] || 'ga'];
+
+				document.cookie = 'give_source=' + get_parameter('utm_source');
+				document.cookie = 'give_medium=' + get_parameter('utm_medium');
+				document.cookie = 'give_campaign=' + get_parameter('utm_campaign');
+
+				//utm_content
+				document.cookie = 'give_content=' + get_parameter('utm_content');
+
+				// If ga function is ready. Let's proceed.
+				if ('function' === typeof ga) {
+					// Load the Ecommerce plugin.
+					ga('require', 'ec');
+
+					var give_forms = $('form.give-form');
+
+					// Loop through each form on page and provide an impression.
+					give_forms.each(function (index, value) {
+
+						var form_id = $(this).find('input[name="give-form-id"]').val();
+						var form_title = $(this).find('input[name="give-form-title"]').val();
+
+						ga('ec:addImpression', {            // Provide product details in an impressionFieldObject.
+							'id': form_id,                   // Product ID (string).
+							'name': form_title,
+							'category': 'Donations',
+							'list': 'GiveWP Donation Forms',
+							'position': index + 1                     // Product position (number).
+						});
+
+						ga('ec:setAction', 'detail');
+
+						ga('send', 'event', 'Fundraising', 'Donation Form View', form_title, {'nonInteraction': 1});
+
+					});
+
+					// More code using $ as alias to jQuery
+					give_forms.on('submit', function (event) {
+
+						var form_id = $(this).find('input[name="give-form-id"]').val();
+						var form_title = $(this).find('input[name="give-form-title"]').val();
+						var form_gateway = $(this).find('input[name="give-gateway"]').val();
+
+						ga('ec:addProduct', {
+							'id': form_id,
+							'name': form_title,
+							'category': 'Donations',
+							'brand': 'Fundraising',
+							'price': $(this).find('.give-amount-hidden').val(),
+							'quantity': 1
+						});
+						ga('ec:setAction', 'add');
+
+						ga('send', 'event', 'Fundraising', 'Donation Form Begin Checkout', form_title);
+
+						ga('ec:setAction', 'checkout', {
+							'option': form_gateway  // Payment method
+						});
+
+						ga('send', 'event', 'Fundraising', 'Donation Form Submitted', form_title);
+
+					});
+
+				} // end if
+
+			}, false); // end win load
+
+
+			/**
+			 * Get specific parameter value from Query string.
+			 * @param {string} parameter Parameter of query string.
+			 * @param {object} data Set of data.
+			 * @return bool
+			 */
+			function get_parameter(parameter, data) {
+
+				if (!parameter) {
+					return false;
+				}
+
+				if (!data) {
+					data = window.location.href;
+				}
+
+				var parameter = parameter.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+				var expr = parameter + "=([^&#]*)";
+				var regex = new RegExp(expr);
+				var results = regex.exec(data);
+
+				if (null !== results) {
+					return results[1];
+				} else {
+					return '';
+				}
+			}
+
+		})(jQuery); //
+	</script>
+
+<script type="e7ec1e10aeb62665d4af77ea-text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.eu01.nr-data.net","licenseKey":"NRJS-2b6b373a7d7c974d892","applicationID":"27299369","transactionName":"MhBSZQoZWUoCUU0LWwtacVIMEVhXTEJYBVE=","queueTime":0,"applicationTime":983,"atts":"HldRE0IDSkQ=","errorBeacon":"bam.eu01.nr-data.net","agent":""}</script><script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="e7ec1e10aeb62665d4af77ea-|49" defer=""></script></body>
+</html>
